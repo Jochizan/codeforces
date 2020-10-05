@@ -88,13 +88,27 @@ void READV(vin& v, int n) {
     }
 }
 
+int n;
+
+void solve() {
+    cin >> n;
+    if(n % 4 != 0)
+    	no;
+    else {
+    	yes;
+    	FORS(i, 1, n/2+1, 1)
+    		cout << i * 2 << " ";
+		FORS(i, 1, n/2, 1)
+    		cout << i * 2 - 1 << " ";
+    	cout << (n/2*2-1) + (n/2) << endl;
+    }	
+}
+
 int main() {
     FASTIO;
-    int m, n;
-    cin >> m >> n;
-    if(m % 2 != 0 && n % 2 != 0)
-        cout << (m*n-1)/2 << endl;
-    else 
-        cout << m*n/2 << endl;
+    int t;
+    cin >> t;
+    while(t--)
+        solve();
     return 0;
 }
