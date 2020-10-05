@@ -98,15 +98,13 @@ void READV(vin& v, int n) {
     }
 }
 
-void solve() {
-    ;
-}
+ll dp[4];
 
 int main() {
     FASTIO;
-    int t;
-    cin >> t;
-    while(t--)
-        solve();
+    FOR(i, 4)
+        cin >> dp[i];
+    sort(dp, dp + 4);
+    cout << dp[3] - dp[2] << " " << dp[3] - dp[1] << " " << dp[3] - dp[0] << endl;
     return 0;
 }

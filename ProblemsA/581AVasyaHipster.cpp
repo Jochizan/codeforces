@@ -98,15 +98,11 @@ void READV(vin& v, int n) {
     }
 }
 
-void solve() {
-    ;
-}
-
 int main() {
     FASTIO;
-    int t;
-    cin >> t;
-    while(t--)
-        solve();
+    int a, b;
+    cin >> a >> b;
+    int c = min(a, b);
+    cout << c << " " << floor((db)abs(a - b)/2) << endl;
     return 0;
 }

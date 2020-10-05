@@ -94,9 +94,27 @@ void solve() {
 
 int main() {
     FASTIO;
-    int t;
-    cin >> t;
-    while(t--)
-        solve();
+    int n, m, c = 1;
+    cin >> n >> m;
+    FOR(i, n) {
+        int b = 0;
+        FOR(j, m) {
+            if(i % 2 == 0) {
+                cout << '#';
+            } else {
+                if(j == m - 1 && b != 1)
+                    c = 0;
+                else if(j == 1 && c == 0) {
+                    c = 1;
+                    b = 1;
+                }
+                if(c == 1)
+                    cout << '.';
+                else
+                    cout << '#';
+            }
+        }
+        cout << endl;
+    }
     return 0;
 }

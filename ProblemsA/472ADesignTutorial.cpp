@@ -61,16 +61,6 @@ using namespace std;
 #define fwrite           freopen("output.txt", "w", stdout)
 #define FASTIO           ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0)
 
-void to_upper(string &s) {
-    for(int i=0;i<s.size();i++)
-        s[i] = toupper(s[i]);
-}
- 
-void to_lower(string &s) {
-    for(int i=0;i<s.size();i++)
-        s[i] = tolower(s[i]);
-}
-
 void printv(vll v) {
     ll sz = v.size();
     for(ll i = 0; i < sz; ++i) {
@@ -98,15 +88,19 @@ void READV(vin& v, int n) {
     }
 }
 
-void solve() {
-    ;
-}
-
 int main() {
     FASTIO;
-    int t;
-    cin >> t;
-    while(t--)
-        solve();
+    int n;
+    cin >> n;
+    int a = floor((db)n / 2), b = ceil((db)n / 2);
+    if(!isPrime(a) && !isPrime(b))
+        cout << a << " " << b << endl;
+    else {
+        while(isPrime(a) || isPrime(b)) {
+            a++;
+            b--;
+        }
+        cout << a << " " << b << endl;
+    }
     return 0;
 }
