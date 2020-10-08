@@ -1,18 +1,3 @@
-/*******
- *   Author: Quamputer
- *   
- * ******/
-#include <bits/stdc++.h>
- 
-using namespace std;
- 
-#define int long long
- 
-#define PB	push_back
-#define ALL(x)	(x).begin(), (x).end()
-#define ALLR(x)	(x).rbegin(), (x).rend()
-#define MP	make_pair
- 
 template <typename A, typename B>
 string to_string(pair<A, B> p);
  
@@ -100,21 +85,6 @@ void debug_out(Head H, Tail... T) {
 #define debug(...) 42
 #endif
  
-#define FAST_IO ios::sync_with_stdio(false); cin.tie(0); cout.tie(0)
- 
-typedef pair<int, int> ii;
-typedef vector<int> vi;
-typedef vector<vi> vvi;
-typedef vector<ii> vii;
-typedef vector<string> vs;
-typedef vector<bool> vb;
- 
-const int INF = LONG_LONG_MAX/2;
-const double PI = 3.141592653589793238;
-const int MOD = 1000000000 + 7;
- 
-#define x first
-#define y second
  
 bool many = false;
 struct Solve {
