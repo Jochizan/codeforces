@@ -1,6 +1,6 @@
 # Codeforces 🌟
 
-## Aqui estaran la resolución a problemas de codedforces 🚀
+## Aqui estaran la resolución a problemas de Codeforces 🚀
 
 ### Estaran clasificados en problemas de tipo A, B, C, D, E y así.
 
