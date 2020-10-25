@@ -88,11 +88,7 @@ void debug_out(Head H, Tail... T) {
     debug_out(T...);
 }
 
-#ifdef KILLBUG
 #define debug(...) cerr << "[" << #__VA_ARGS__ << "]:", debug_out(__VA_ARGS__)
-#else
-#define debug(...) 42
-#endif
 
 #define db                  double
 #define ll                  long long
@@ -191,6 +187,6 @@ int main() {
     int t;
     cin >> t;
     while(t--)
-        debug() << imie(t);
+        solve();
     return 0;
 }

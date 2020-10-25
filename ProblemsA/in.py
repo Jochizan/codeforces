@@ -12,5 +12,4 @@ while(t>0):
             c+=abs(s)
             s=0
     print(c)
-                
     t-=1

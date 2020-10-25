@@ -88,7 +88,11 @@ void debug_out(Head H, Tail... T) {
     debug_out(T...);
 }
 
+#ifdef KILLBUG
 #define debug(...) cerr << "[" << #__VA_ARGS__ << "]:", debug_out(__VA_ARGS__)
+#else
+#define debug(...) 42
+#endif
 
 #define db                  double
 #define ll                  long long
@@ -178,7 +182,12 @@ void readV(vector<int>& v, int *n){
 }
 
 void solve() {
-
+    string s;
+    cin >> s;
+    int n = s.size();
+    int d = s[0] - '1';
+    int ans = d * 10 + (n * (n + 1)) / 2;
+    cout << ans << endl;
 }
 
 int main() {
