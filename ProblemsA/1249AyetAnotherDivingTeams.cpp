@@ -178,22 +178,30 @@ void readV(vector<int>& v, int *n){
 }
 
 const int mxN = 1e2;
+int n;
+
+void solve() {
+    int up[mxN], ans = 1;
+    cin >> n;
+    FOR(i, n)
+        cin >> up[i];
+    sort(up, up + n);
+    up[n] = -1;
+    FOR(i, n) {
+        if(up[i+1] == up[i] + 1) {
+            ans = 2;
+            break;
+        }
+    }
+    cout << ans << endl;
+}
 
 int main() {
     FASTIO;
     starTime = clock();
-    map<int, int> mp;
-    map<int, int>::iterator it;
-    nin(n);
-    FOR(i, n) {
-        int tmp;
-        cin >> tmp;
-        mp[tmp]++;
-    }
-    int ans = 0;
-    for(it = mp.B; it != mp.E; ++it)
-        if(it->S > ans)
-            ans = it->S;
-    cout << ans << endl;
+    int t;
+    cin >> t;
+    while(t--)
+        solve();
     return 0;
 }
