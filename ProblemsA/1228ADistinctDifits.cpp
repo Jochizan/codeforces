@@ -16,76 +16,76 @@ template <typename A, typename B, typename C, typename D>
 string to_string(tuple<A, B, C, D> p);
 
 string to_string(const string& s) {
-  return '"' + s + '"';
+    return '"' + s + '"';
 }
 
 string to_string(const char* s) {
-  return to_string((string) s);
+    return to_string((string) s);
 }
 
 string to_string(bool b) {
-  return (b ? "true" : "false");
+    return (b ? "true" : "false");
 }
 
 string to_string(vector<bool> v) {
-  bool first = true;
-  string res = "{";
-  for (int i = 0; i < static_cast<int>(v.size()); i++) {
-    if (!first) {
-      res += ", ";
+    bool first = true;
+    string res = "{";
+    for (int i = 0; i < static_cast<int>(v.size()); i++) {
+        if (!first) {
+            res += ", ";
+        }
+        first = false;
+        res += to_string(v[i]);
     }
-    first = false;
-    res += to_string(v[i]);
-  }
-  res += "}";
-  return res;
+    res += "}";
+    return res;
 }
 
 template <size_t N>
 string to_string(bitset<N> v) {
-  string res = "";
-  for (size_t i = 0; i < N; i++) {
-    res += static_cast<char>('0' + v[i]);
-  }
-  return res;
+    string res = "";
+    for (size_t i = 0; i < N; i++) {
+        res += static_cast<char>('0' + v[i]);
+    }
+    return res;
 }
 
 template <typename A>
 string to_string(A v) {
-  bool first = true;
-  string res = "{";
-  for (const auto &x : v) {
-    if (!first) {
-      res += ", ";
+    bool first = true;
+    string res = "{";
+    for (const auto &x : v) {
+        if (!first) {
+            res += ", ";
+        }
+        first = false;
+        res += to_string(x);
     }
-    first = false;
-    res += to_string(x);
-  }
-  res += "}";
-  return res;
+    res += "}";
+    return res;
 }
 
 template <typename A, typename B>
 string to_string(pair<A, B> p) {
-  return "(" + to_string(p.first) + ", " + to_string(p.second) + ")";
+    return "(" + to_string(p.first) + ", " + to_string(p.second) + ")";
 }
 
 template <typename A, typename B, typename C>
 string to_string(tuple<A, B, C> p) {
-  return "(" + to_string(get<0>(p)) + ", " + to_string(get<1>(p)) + ", " + to_string(get<2>(p)) + ")";
+    return "(" + to_string(get<0>(p)) + ", " + to_string(get<1>(p)) + ", " + to_string(get<2>(p)) + ")";
 }
 
 template <typename A, typename B, typename C, typename D>
 string to_string(tuple<A, B, C, D> p) {
-  return "(" + to_string(get<0>(p)) + ", " + to_string(get<1>(p)) + ", " + to_string(get<2>(p)) + ", " + to_string(get<3>(p)) + ")";
+    return "(" + to_string(get<0>(p)) + ", " + to_string(get<1>(p)) + ", " + to_string(get<2>(p)) + ", " + to_string(get<3>(p)) + ")";
 }
 
 void debug_out() { cerr << endl; }
 
 template <typename Head, typename... Tail>
 void debug_out(Head H, Tail... T) {
-  cerr << " " << to_string(H);
-  debug_out(T...);
+    cerr << " " << to_string(H);
+    debug_out(T...);
 }
 
 #define debug(...) cerr << "[" << #__VA_ARGS__ << "]:", debug_out(__VA_ARGS__)
@@ -151,42 +151,55 @@ void debug_out(Head H, Tail... T) {
 
 clock_t starTime;
 db getCurrentTime() {
-  return (db)(clock() - starTime) / CLOCKS_PER_SEC;
+    return (db)(clock() - starTime) / CLOCKS_PER_SEC;
 }
 
 void printv(vector<int>& v) {
-  int sz = v.size();
-  for(int i = 0; i < sz; ++i)
-    cout << v[i] << " \n"[i == sz - 1];
+    int sz = v.size();
+    for(int i = 0; i < sz; ++i)
+        cout << v[i] << " \n"[i == sz - 1];
 }
 
 bool isPrime(int *n) {
-  for(int i = 2; i*i <= *n; ++i)
-    if(*n % i == 0)
-      return false;
-  if(*n == 1)
-    return false; 
-  return true;
+    for(int i = 2; i*i <= *n; ++i)
+        if(*n % i == 0)
+            return false;
+    if(*n == 1)
+        return false; 
+    return true;
 }
 
 void readV(vector<int>& v, int *n){
-  int tmp;
-  FOR(i, *n) {
-    cin >> tmp;
-    v.pb(tmp);
-  }
+    int tmp;
+    FOR(i, *n) {
+        cin >> tmp;
+        v.pb(tmp);
+    }
 }
 
-void solve() {
-
+bool distinct(int n) {
+    int count = 0;
+    map<char, int> mch;
+    while(n != 0) {
+        mch[(n%10) + '0']++;
+        n /= 10;
+        count++;
+    }
+    int tmp = mch.size();
+    return count == tmp ? true : false;
 }
 
 int main() {
-  FASTIO;
-  starTime = clock();
-  int t;
-  cin >> t;
-  while(t--)
-    solve();
-  return 0;
+    FASTIO;
+    starTime = clock();
+    int l, r, x = -1;
+    cin >> l >> r;
+    FORS(i, l, r + 1, 1) {
+        if(distinct(i)) {
+            x = i;
+            break;
+        }       
+    }
+    cout << x << endl;
+    return 0;
 }

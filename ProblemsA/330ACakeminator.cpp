@@ -1,11 +1,15 @@
+<<<<<<< HEAD
 /**
  *
  * @author Joan, N y R
  */
+=======
+>>>>>>> 32daa911b615ae80ba812c36c2ce803aba79c6be
 #include <bits/stdc++.h>
 
 using namespace std;
 
+<<<<<<< HEAD
 template <typename A, typename B>
 string to_string(pair<A, B> p);
 
@@ -177,15 +181,59 @@ void readV(vector<int>& v, int *n){
   }
 }
 
-void solve() {
+int r, c, ans = 0;
+char up[10][10];
 
+void solve() {
+  cin >> r >> c;
+  FOR(i, r) {
+    FOR(j, c) {
+      cin >> up[i][j];
+      if(up[i][j] == 'S') {
+        oki[i] = 1;
+        okj[j] = 1;
+      }
+    }
+  }
+  FOR(i, r) {
+    bool ok = 0;
+    FOR(j, c) {
+      if (up[i][j] == 'S') {
+        ok = 1;
+        break;
+      }
+    }
+    if (ok == 0) {
+      FOR(j, c) {
+        up[i][j] = 'x';
+        ans++;
+      }
+    }
+  }
+  FOR(j, c) {
+    bool ok = 0;
+    FOR(i, r) {
+      if (up[i][j] == 'S') {
+        ok = 1;
+        break;
+      }
+    }
+    if (ok == 0) {
+      FOR(i, r) {
+        if (up[i][j] == '.') {
+          ans++;
+          up[i][j] = 'x';
+        }
+      }
+    }
+  }
+  cout << ans << endl;
 }
 
 int main() {
   FASTIO;
   starTime = clock();
-  int t;
-  cin >> t;
+  int t = 1;
   while(t--)
     solve();
   return 0;

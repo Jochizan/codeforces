@@ -178,7 +178,15 @@ void readV(vector<int>& v, int *n){
 }
 
 void solve() {
-
+  int temp;
+  set<int> up;
+  int n;
+  cin >> n;
+  FOR(i, n) {
+    cin >> temp;
+    up.insert(temp);
+  }
+  cout << (up.size() == 1 ? n : 1) << endl;
 }
 
 int main() {
