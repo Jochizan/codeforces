@@ -181,8 +181,27 @@ void readV(vector<int>& v, int *n){
   }
 }
 
-void solve() {
+const int mxN  = 1e2;
+int up[mxN];
 
+void solve() {
+  int n, one = 0, two = 0, tmp, sm = 0;
+  cin >> n;
+  FOR(i, n) {
+    cin >> tmp;
+    sm += tmp;
+    if(tmp == 1)
+      one++;
+    else
+      two++;
+  }
+  cout << (sm % 2 != 0
+      ? "NO"
+      : (one >= 2) 
+      || (sm == 2 && one == 2) 
+      || (two == n && n % 2 == 0)
+      ? "YES"
+      : "NO") << endl;
 }
 
 int main() {
@@ -191,6 +210,6 @@ int main() {
   int t;
   cin >> t;
   while(t--)
-    debug() << imie(t);
+    solve();
   return 0;
 }
