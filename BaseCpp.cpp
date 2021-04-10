@@ -191,6 +191,6 @@ int main() {
     int t;
     cin >> t;
     while(t--)
-        debug() << imie(t);
+      solve();
     return 0;
 }
