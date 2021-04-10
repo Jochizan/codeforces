@@ -1,8 +1,8 @@
 #########			##	##     ##    	  ####  #####  ##     #  ##     #		##
+from itertools import permutations
 import random
 import bisect as bis
 import math
-from itertools import permutations
 import sys
 #			   # #	# #   # #		 #	  #	#	#  # #    #  # #    #	   # #
 #			  #  #	#  ###  #	    #		#	#  #  #   #  #  #   #	  #  #

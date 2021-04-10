@@ -177,8 +177,20 @@ void readV(vector<int>& v, int *n){
   }
 }
 
-void solve() {
+int n;
 
+void solve() {
+  cin >> n;
+  map<ll, ll> mp;
+  ll ans = 0;
+  vin dp(n);
+  FOR(i, n) {
+    cin >> dp[i]; 
+    mp[dp[i]]++;
+  } 
+  for (auto x: mp)
+    ans = max(ans, x.second);
+  cout << ans << endl;
 }
 
 int main() {
