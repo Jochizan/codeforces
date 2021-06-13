@@ -1,7 +1,13 @@
+# Binary files
 *.exe
 *.class
 *.exe.stackdump
 *.zip
 *.rar
+
+# Plugins
 nul
 .cph
+
+# config files
+.idea
