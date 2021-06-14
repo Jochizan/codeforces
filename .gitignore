@@ -7,7 +7,10 @@ out
 # Plugins
 nul
 .cph
+red_cup/*.json
+CHelperReport.txt
 
 # config files
 .idea
 *.iml
+*.template
