@@ -1,9 +1,8 @@
 # Binary files
 *.exe
 *.class
-*.exe.stackdump
 *.zip
-*.rar
+out
 
 # Plugins
 nul
@@ -11,3 +10,4 @@ nul
 
 # config files
 .idea
+*.iml
