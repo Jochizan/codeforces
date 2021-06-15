@@ -9,8 +9,8 @@ nul
 .cph
 red_cup/*.json
 CHelperReport.txt
-*.template
 
 # config files
 .idea
 *.iml
+*.template
