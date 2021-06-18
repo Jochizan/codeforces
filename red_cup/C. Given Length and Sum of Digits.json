@@ -1,0 +1,44 @@
+{
+  "name" : "C. Given Length and Sum of Digits...",
+  "testType" : "SINGLE",
+  "input" : {
+    "type" : "STANDARD",
+    "fileName" : "input.txt"
+  },
+  "output" : {
+    "type" : "STANDARD",
+    "fileName" : "output.txt"
+  },
+  "tests" : [ {
+    "input" : "2 15\n",
+    "output" : "69 96\n",
+    "index" : 0,
+    "active" : true
+  }, {
+    "input" : "3 0\n",
+    "output" : "-1 -1\n",
+    "index" : 1,
+    "active" : true
+  }, {
+    "input" : "1 10",
+    "output" : "-1 -1",
+    "index" : 2,
+    "active" : true
+  } ],
+  "location" : "red_cup",
+  "vmArgs" : "-Xmx256M",
+  "mainClass" : "Main",
+  "taskClass" : "red_cup.CGivenLengthAndSumOfDigits",
+  "checkerClass" : "net.egork.chelper.checkers.TokenChecker",
+  "checkerParameters" : "",
+  "testClasses" : [ ],
+  "date" : "2021.06.17",
+  "contestName" : "Codeforces - Codeforces Round #277.5 (Div. 2)",
+  "truncate" : true,
+  "inputClass" : "java.util.Scanner",
+  "outputClass" : "java.io.PrintWriter",
+  "includeLocale" : false,
+  "failOnOverflow" : false,
+  "interactive" : false,
+  "interactor" : "net.egork.chelper.tester.Interactor"
+}

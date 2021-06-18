@@ -1,3 +1,10 @@
 *.exe
 *.class
 .cph
+
+red_cup/*.json
+.idea
+out
+*.xml
+*.iml
+*.template
